@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <section style="margin-bottom: 0rem;">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{url_for('index')}}">Disease Predictor</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('stroke')}}">Stroke Prediction</a></li>
+                    <li><a href="{{url_for('bcancer')}}">Breast Cancer prediction</a></li>
+                    <li><a href="{{url_for('diabetics')}}">Diabetics Prediction</a></li>
+                    <li><a href="{{url_for('liver')}}">Liver Disease Prediction</a></li>
+                    <li><a href="{{url_for('kidney')}}">Chronic Kidney Prediction</a></li>
+                    <li><a href="{{url_for('malaria')}}">Malaria Disease Prediction</a></li>
+                    <li><a href="{{url_for('braintumor')}}">Brain Tumor Prediction</a></li>
+                    <li><a href="{{url_for('pneumoniapage')}}">Peneumonia Prediction</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div style="background-image: url(../static/img/tablets.jpg); margin-top: -5rem; padding-bottom: 20rem; text-align: center; background-position: center; background-size: cover;">
+        <h1 style="padding-top: 15rem; font-family: 'Poppins';">Disease Predictor Using AI</h1>
+        <p style="padding-top: 19rem; font-family: 'Poppins';">Done By: </p>
+        <p style="padding-top: 1rem; font-family: 'Poppins';">Nandha Kishore  |  Magesh Bhagyaraj  | Ram Kumar </p>
+       
+       
+        </section>
+    </body>
+</html>

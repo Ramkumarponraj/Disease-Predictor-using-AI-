@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+
+    <style>
+        .center {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 8%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(230, 239, 245);
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .center {
+                margin-top: 40rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(230, 239, 245);">
+    <section style="margin-bottom: 0rem;">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{url_for('index')}}">Disease Predictor</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('stroke')}}">Stroke Prediction</a></li>
+                    <li><a href="{{url_for('bcancer')}}">Breast Cancer prediction</a></li>
+                    <li><a href="{{url_for('diabetics')}}">Diabetics Prediction</a></li>
+                    <li><a href="{{url_for('liver')}}">Liver Disease Prediction</a></li>
+                    <li><a href="{{url_for('kidney')}}">Chronic Kidney Prediction</a></li>
+                    <li><a href="{{url_for('malaria')}}">Malaria Disease Prediction</a></li>
+                    <li><a href="{{url_for('braintumor')}}">Brain Tumor Prediction</a></li>
+                    <li><a href="{{url_for('pneumoniapage')}}">Peneumonia Prediction</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <center style="padding-top: 10rem;">
+        <div class='cont'>
+            <br>
+            </h2>
+        </div>
+        <div class="center">
+            <h2>Stroke Prediction</h2>
+            <h4>Please Enter The Values specified in the report.</h4>
+            <form action='/predictstroke' method="post">
+
+                <div class="form-group">
+                    <input list="gender" class="form-control" placeholder="gender (Female:0, Male:1 )" required type="text" name="gender">
+                        <datalist id="gender">
+                            <option value="0">
+                            <option value="1">
+                        </datalist>
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="age" required type="text" name="age">
+                </div>
+
+
+                <div class="form-group">
+                    <input list="hypertension" class="form-control" placeholder="hypertension (no-hypertension:0, hypertension:1)" required type="text"
+                        name="hypertension">
+                        <datalist id="hypertension">
+                            <option value="0">
+                            <option value="1">
+                        </datalist>
+                </div>
+
+
+                <div class="form-group">
+                    <input list="heart_disease" class="form-control" placeholder="heart_disease (no-heart_disease:0, heart_disease:1)" required type="text" name="heart_disease">
+                    <datalist id="heart_disease">
+                        <option value="0">
+                        <option value="1">
+                    </datalist>
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="avg_glucose_level" type="text" required name="avg_glucose_level">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="bmi" required type="text"
+                        name="bmi">
+                </div>
+                
+                <div class="form-group">
+                    <input list="smoking_status" class="form-control" placeholder="smoking_status (non-smoker:0, smoker:1)" required type="text" name="smoking_status">
+                    <datalist id="smoking_status">
+                        <option value="0">
+                        <option value="1">
+                    </datalist>
+                </div>
+
+
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
+
+
+            </form>
+            {{pred}}
+        </div>
+
+    </center>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <center>
+        <div style="padding-top: 10rem;" class='cont'>
+
+
+            {% if data[0][0] == 1: %}
+            <h1>Prediction: The person is Uninfected.</h1>
+
+            {%else%}
+            <h1>Prediction: The person has Parasitized with Malaria.</h1>
+
+
+            {%endif%}
+
+        </div>
+        <!---<h1>acc<br> no: <span>{{data[0]}}</span> <br>yes: <span>{{data[1]}}</span><br> </h1>--->
+
+        <a style="background-color: #555555; color: white; padding: 15px 32px; text-align: center; font-size: 16px; text-decoration: none;"
+            href="/" class='btn'>Back To Home</a>
+
+    </center>
+
+</body>
+
+</html>

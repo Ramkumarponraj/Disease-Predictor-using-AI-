@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+
+    <style>
+        .center {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 8%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(230, 239, 245);
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .center {
+                margin-top: 40rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(230, 239, 245);">
+    <section style="margin-bottom: 0rem;">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{url_for('index')}}">Disease Predictor</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('stroke')}}">Stroke Prediction</a></li>
+                    <li><a href="{{url_for('bcancer')}}">Breast Cancer prediction</a></li>
+                    <li><a href="{{url_for('diabetics')}}">Diabetics Prediction</a></li>
+                    <li><a href="{{url_for('liver')}}">Liver Disease Prediction</a></li>
+                    <li><a href="{{url_for('kidney')}}">Chronic Kidney Prediction</a></li>
+                    <li><a href="{{url_for('malaria')}}">Malaria Disease Prediction</a></li>
+                    <li><a href="{{url_for('braintumor')}}">Brain Tumor Prediction</a></li>
+                    <li><a href="{{url_for('pneumoniapage')}}">Peneumonia Prediction</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <center style="padding-top: 10rem;">
+        <div class='cont'>
+            <br>
+            </h2>
+        </div>
+        <div class="center">
+            <h2>Chronic Kidney Prediction</h2>
+            <h4>Please Enter The Values specified in the report.</h4>
+            <form action='/predictkidney' method="post">
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Albumin" required type="text" name="al">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Sugar" required type="text" name="su">
+                </div>
+
+
+                <div class="form-group">
+                     <input class="form-control" placeholder="Pus Cell clumps" required type="text" name="pcc">
+                </div>
+
+
+                <div class="form-group">
+                     <input class="form-control" placeholder="Bacteria" required type="text" name="ba">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Serum Creatinine" type="text" required name="sc">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Diabetes Mellitus" required type="text"
+                        name="dm">
+                </div>
+
+                <div class="form-group">
+                     <input class="form-control" placeholder="Coronary Artery Disease" required type="text" name="cad">
+                </div>
+
+                <div class="form-group">
+                     <input class="form-control" placeholder="Pedal Edema" required type="text" name="pe">
+                </div>
+
+                <div class="form-group">
+                     <input class="form-control" placeholder="Anemia" required type="text" name="ane">
+                </div>
+
+
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
+
+
+            </form>
+            {{pred}}
+        </div>
+
+    </center>
+
+</body>
+
+</html>

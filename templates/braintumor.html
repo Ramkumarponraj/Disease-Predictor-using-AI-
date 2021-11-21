@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body style="background-image: url(../static/img/cancersym3.jpg);  background-repeat: no-repeat; background-size: cover; ">  
+        <section style="margin-bottom: 0rem;">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{url_for('index')}}">Disease Predictor</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('stroke')}}">Stroke Prediction</a></li>
+                        <li><a href="{{url_for('bcancer')}}">Breast Cancer prediction</a></li>
+                        <li><a href="{{url_for('diabetics')}}">Diabetics Prediction</a></li>
+                        <li><a href="{{url_for('liver')}}">Liver Disease Prediction</a></li>
+                        <li><a href="{{url_for('kidney')}}">Chronic Kidney Prediction</a></li>
+                        <li><a href="{{url_for('malaria')}}">Malaria Disease Prediction</a></li>
+                        <li><a href="{{url_for('braintumor')}}">Brain Tumor Prediction</a></li>
+                        <li><a href="{{url_for('pneumoniapage')}}">Peneumonia Prediction</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <center style="padding-top: 10rem;">
+            <div class='cont'>
+                <br><h1> Brain Tumor Prediction</h1></h2>
+            </div>
+            
+
+        <form method="POST" action="{{url_for('home')}}" enctype="multipart/form-data">
+            <input type="file" name='image' class='btn'><br><br><br> 
+            <input class="brainbutton" style="background-color: #555555; color: white; padding: 15px 32px; text-align: center; font-size: 16px;" type="submit" class='btn'>
+        </form>
+
+    </center>
+
+    </body>
+</html>

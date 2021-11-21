@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+
+    <style>
+        .center {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 1%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(230, 239, 245);
+            margin-top: 7rem;
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .center {
+                margin-top: 50rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(230, 239, 245);">
+    <section style="margin-bottom: 0rem;">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{url_for('index')}}">Disease Predictor</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('stroke')}}">Stroke Prediction</a></li>
+                    <li><a href="{{url_for('bcancer')}}">Breast Cancer prediction</a></li>
+                    <li><a href="{{url_for('diabetics')}}">Diabetics Prediction</a></li>
+                    <li><a href="{{url_for('liver')}}">Liver Disease Prediction</a></li>
+                    <li><a href="{{url_for('kidney')}}">Chronic Kidney Prediction</a></li>
+                    <li><a href="{{url_for('malaria')}}">Malaria Disease Prediction</a></li>
+                    <li><a href="{{url_for('braintumor')}}">Brain Tumor Prediction</a></li>
+                    <li><a href="{{url_for('pneumoniapage')}}">Peneumonia Prediction</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <center style="padding-top: 10rem;">
+        <div class='cont'>
+            <br>
+            </h2>
+        </div>
+        <div class="center">
+            <h2>Diabetics Prediction</h2>
+            <form action='/predictdia' method="post">
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Pregnancies" required type="text" name="Pregnancies">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Glucose" required type="text" name="Glucose">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="BloodPressure" required type="text"
+                        name="BloodPressure">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="SkinThickness" required type="text"
+                        name="SkinThickness">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Insulin" type="text" required
+                        name="Insulin">
+                </div>
+
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="BMI" required type="text"
+                        name="BMI">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="DiabetesPedigreeFunction" required type="text"
+                        name="DiabetesPedigreeFunction">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" placeholder="Age" required type="text" name="Age">
+                </div>
+
+
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
+
+
+            </form>
+            {{pred}}
+        </div>
+
+    </center>
+
+</body>
+
+</html>
