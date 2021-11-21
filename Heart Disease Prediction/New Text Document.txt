@@ -1,0 +1,8 @@
+Yes
+Male - 1
+age - 67
+Hypertension - 1
+avg_glucose - 228.69
+bmi - 36.6
+smoking -1
+
